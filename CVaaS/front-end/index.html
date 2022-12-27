@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>icv_project</title>
+  <link rel = "icon" href = "bulb.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- linking css file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- load javascript after loading all html content -->
+    <!-- <script src="script/script.js"></script> -->
+    <nav class="navbar navbar-expand-lg fixed-top navbarScroll">
+      <div class="container">
+          <a class="navbar-brand" href="#about">PROJECT</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#home"> Home </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#about"> About </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#services"> Demo </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#portfolio"> Source & code </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#contact"> Me </a>
+                  </li>
+              </ul>
+              
+          </div>
+      </div>
+  </nav>
+   <!-- main banner -->
+   <section class="bgimage" id="home">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
+            <!-- <h2 class="hero_title">Computer Vision Project</h2> -->
+            <h1 class="animate-charcter"> Computer Vision Project</h1>
+            <h5 class="animate-charcter_2">Multi-Stage Image Restortion</h5>
+            <!-- <section>
+                <div class="content">
+                  <h2>Multi Stage Image Restortion</h2>
+                  <h2>Multi Stage Image Restortion</h2>
+                </div>
+              </section> -->
+        </div>
+        </div>
+    </div>
+</section>
+<!-- about project section-->
+<section id="about">
+  <div class="container mt-4 pt-4">
+    <header>
+      <h1 class="text-center">About Project</h1>
+    </header>
+      <div class="row mt-4">
+          <div class="col-lg-4">
+            <br><br>
+              <img src="new_blur.gif" class= "imageAboutPage" alt="">
+              <br> <br>
+              <img src="blur2.gif" class= "imageAboutPage" alt="">
+          </div>
+
+          <div class="col-lg-8">
+            <h4 >Introduction</h4>
+              <p> This project is about image restoration in which degraded image like noising,blurring,
+                low Resolution lowlight_enhanced put into model and then model(MIRNETv2) 
+                process image through multiple-stages after that model give a fine output. 
+                After we get clear image from model then an object detection model (in this case FASTER RCNN) apply on the output of MiRNETv2, 
+                then we get an image in which every object is detected. Despite of image we train our model train on video in which each frame is first restore,
+                 then FASTER RCNN is used for object detection in the video. Addition part in the video is that you just must put YouTube link that you want to process. Code will download video from given link, processed it and download video in the given path of directory.
+                 After that we put this whole model in the form of web application, in which we 
+                 use flask framework in the back-end and html, CSS and bootstrap (for responsiveness) in the front-end.
+                 <br> <br>
+                 Tool used for this project are following:
+        
+              </p>
+              <div class="row mt-3">
+                  <div class="col-md-6">
+                      <ul>
+                          <li>Pytorch</li>
+                          <li>Numpy</li>
+                          <li>Matplot</li>
+
+                      </ul>
+                  </div>
+                  <div class="col-md-6">
+                      <ul>
+                          <li>Html,CSS</li>
+                          <li>Bootstrap</li>
+                          <li>Flask</li>
+
+                      </ul>
+                  </div>
+              </div>
+              <div class="row mt-3">
+                  <p>Beside of this I also use some other libraries like Numpy, Basic-Sr Pytorch tool box , TorchVision etc.
+                    Software used for this project are :
+                    <div class="col-md-6">
+                        <ul>
+                            <li>Google collab</li>
+                            <li>Visual Studio Code</li>
+                          
+                        </ul>
+                    </div>
+                  </p>
+              </div>
+          </div>
+      </div>
+</section>
+<!-- Demo section-->
+<section id="services">
+  <div class="container">
+    <header>
+      <h1 class="text-center">Image Demo</h1>
+    </header>
+      <br><br>
+      <div class="col-lg-8">
+        <h4 >Instruction</h4>
+        <div class="col-md-6">
+            <br>
+            <p>Follow below steps:</p>
+            <ol>
+                <li>You have to choose any degraded image </li>
+                <li>Press load button </li>
+                <li>Press process image button</li>
+            </ol>
+            <p>After these steps final output will be visible after processing automatically.</p>
+            <br>
+        </div>
+    </div>
+</div>
+    <!-- Create upload image function -->
+    <input id="img_src" type="file"/>
+    <input id = "load_img_btn" type="button" onclick="loadImage()" value="Load"/>
+    <!-- Drop down menu to select image processing operation -->
+    <select id="image_op">
+        <option value="real_denoising">real_denoising</option>
+        <option value="super_resolution">super_resolution</option>
+        <option value="contrast_enhancement">contrast_enhancement</option>
+        <option value="lowlight_enhancement">lowlight_enhancement</option>
+    </select>
+    <input type="button" id="process_img" value="Process Image" onclick="processImage()"/>
+    <br>
+    <br>
+    <!-- This canvas is for the original image -->
+    <canvas id="local_canvas"></canvas>
+    <!-- This is for the processes image -->
+    <canvas id='processed_canvas' src=""></canvas>
+    
+    <br><br><br>
+    <img src="">  
+          
+          
+</section>
+<!-- Source code section-->
+<section id="portfolio">
+  <div class="container mt-3">
+    <br><br><br>
+    <header>
+      <h1 class="text-center">Source code</h1>
+    </header>
+      <div class="row">
+        <div class="col-lg-4 mt-4">
+            <div class="card">
+                <img class="card-img-top" src="github-mark.png" width="130" height="250"alt="Card image" >
+                <div class="card-body">
+                    <h4 class="card-title">Github</h4>
+                    <p class="card-text">Here is the link of my Project's all repositories.</p>
+                    <div class="text-center">
+                        <a href="https://github.com/Code-blooded-01" class="btn btn-success" target="_blank">Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-4">
+          <div class="card portfolioContent">
+              <img class="card-img-top" src="Google_Colaboratory_SVG_Logo.svg.png"  alt="Card image" style="width:100%">
+              <div class="card-body">
+                  <h4 class="card-title">Google Collab</h4>
+                  <p class="card-text">Here is the Link of colab Note book where video demo implemented and also other code.</p>
+                  <div class="text-center">
+                      <a href="#" class="btn btn-success">Link</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 mt-4">
+        <div class="card portfolioContent">
+            <img class="card-img-top" src="jovain.png" alt="Card image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">Jovain</h4>
+                <p class="card-text">Here is the Link of colab Note book where video demo implemented and also other code. This note book is same like colab </p>
+                <div class="text-center">
+                    <a href="https://jovian.ai/codeblooded69" class="btn btn-success"target="_blank">Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- about me section-->
+<section id="contact">
+    <div class="container mt-4 pt-4">
+        <header>
+            <h1 class="text-center">About Me </h1>
+        </header>
+       
+        <div class="row mt-4">
+            <div class="col-lg-4">
+               <a target="_blank" href="about.jpg"><img src="about.jpg" class= "imageAboutPage" alt="ahmed" width="250" height="450" style="border-radius: 50%;"></a> 
+            </div>
+
+            <div class="col-lg-8">
+                <br><br>
+                <div class="name">
+                <h6> Hi ! i'm M.Ahmed Naseer</h6></div>
+                    <p> <br> I’m from Gujranwala. Currently third-year student at Pieas. I’m enthusiastic about machine learning and development. I have keen interest in both fields, but I am more focused on machine learning and deep learning. In addition to this, I am always working on improving my skills and growing professionally.
+                    <br>
+
+                    I am interested in finding opportunities to expand my professional experience in machine learning and development, and I am open to any positions in these fields.
+                    <br>
+                    Additionally, I enjoy working in challenging and diverse environments and thrive in collaborative settings.
+                    <br>
+                     
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <ul>
+                            <li>E-mail: codeblooded69@gmail.com</li>
+                            <li>Occupation: Student</li>
+
+                        </ul>
+                    </div>
+                
+                </div>
+                
+            </div>
+        </div>
+</section>
+<!-- footer section-->
+<footer id="footer">
+    <div class="container-fluid">
+        <!-- social media icons -->
+        <div class="social-icons mt-4">
+            <a href="https://www.facebook.com/ahmednaseer.ahmednaseer.12" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/ahmed_naseer_ansari/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/ahmed-naseer-ansari-99861b250/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
