@@ -1,3 +1,5 @@
+<a href="https://colab.research.google.com/drive/1HN9Sd8UEqB1k_O8RpdRLL8ZUKcxh5LP8?usp=sharing" rel="nofollow"  target="_blank"><img src="https://camo.githubusercontent.com/84f0493939e0c4de4e6dbe113251b4bfb5353e57134ffd9fcab6b8714514d4d1/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667" alt="Open In Colab" data-canonical-src="https://colab.research.google.com/assets/colab-badge.svg" style="max-width: 100%;"></a>
+
 <h1><b>Multi-stage Image Restortion and Enhancement</h1>
 
 <h2> <b>Introduction</h2>
@@ -27,5 +29,4 @@
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:.25in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>I made a complete web application for this project by using flask framework. For front-end I used as usual HTML and CSS. And for the sake of responsive interaction, I also include bootstrap in it. I also used JAVA-Script for interconnection between front-end and back-end. &nbsp;</p>
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:.25in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;Note:</p>
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:.25in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>I explain whole code on colab notebook by adding comments on each cell that everyone can easily understand it. Same thing I used for web application. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
-<a href="https://colab.research.google.com/drive/1HN9Sd8UEqB1k_O8RpdRLL8ZUKcxh5LP8?usp=sharing" rel="nofollow"  target="_blank"><img src="https://camo.githubusercontent.com/84f0493939e0c4de4e6dbe113251b4bfb5353e57134ffd9fcab6b8714514d4d1/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667" alt="Open In Colab" data-canonical-src="https://colab.research.google.com/assets/colab-badge.svg" style="max-width: 100%;"></a>
 
